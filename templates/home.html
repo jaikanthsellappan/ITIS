@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home - Community Library{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Community Library</h2>
+    <p>This is the home page of the Community Library management system. Use the navigation bar to explore the site.</p>
+
+    <form method="POST" action="/search">
+        <input type="text" name="search" placeholder="Search by title or author">
+        <button type="submit">Search</button>
+    </form>
+
+    <h3>Book List</h3>
+    <ul>
+        {% for book in books %}
+            <li>
+                <h4>{{ book.title }}</h4>
+                <p>Author: {{ book.author }}</p>
+                <a href="{{ url_for('download', book_id=book.id) }}">Download</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
