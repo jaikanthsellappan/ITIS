@@ -70,7 +70,7 @@ ITIS_ASS_3/
 
 ---
 
-## nstallation & Setup
+## Installation & Setup
 
 ### Prerequisites
 
